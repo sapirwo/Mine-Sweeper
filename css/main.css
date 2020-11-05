@@ -1,0 +1,103 @@
+body {
+    background: rgb(107, 170, 212);
+    color: rgb(9, 21, 75);
+    text-align: center;
+}
+h1{
+    font-size: 40px;
+    font-style: italic;
+}
+button {
+    border-radius: 50%;
+    border: double;
+    height: 80px;
+    width: 80px;
+    outline: 0px;
+    background-color: rgb(228, 210, 210);
+}
+
+button:hover{
+    background-color: rgb(177, 165, 165);
+    cursor: pointer; 
+}
+
+.userMonitor {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
+
+.safeClicks{
+    cursor: pointer;
+}
+
+.monitorEmojy{
+    cursor: pointer;
+}
+
+.gameTable {
+    margin: auto;
+    padding: 10px;
+}
+
+.cell {
+    width: 35px;
+    height: 35px;
+    border: 2px dotted;
+    cursor: pointer;
+}
+
+.board { 
+    text-indent: -9999px;
+}
+
+.hiden{
+    background-color: blue;
+}
+.shown {
+    text-indent: 0
+}
+
+.marked {
+    text-indent: 0;
+    background-color: red;
+}
+
+.mine {
+    text-indent: 0;  
+}
+
+.mineCount {
+    font-size: 30px;
+    background-color: rgb(206, 182, 182);
+    border-radius: 50%;
+    border-style: double;
+    padding: 15px;
+}
+
+.timer{
+    font-size: 40px;
+    background-color: rgb(206, 182, 182);
+    border-radius: 50%;
+    border-style: double;
+    padding: 15px;
+}
+.hintBar{
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.hintTxt{
+    font-size: 30px;
+    margin-right: 20px;
+    font-style: italic;
+}
+
+.undo {
+    font-size: 20px;
+}
+.bestGame {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(71, 47, 47);
+    font-style: italic;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mine Sweeper</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <h1>Mine Sweeper</h1>
+    <div class="minesCounterAndTimer">
+        <span class="mineCount">💣: 0</span>
+        <span class="timer">
+            <span class="min10">0</span>
+            <span class="min01">0</span>
+            :<span class="sec10">0</span>
+            <span class="sec01">0</span>
+        </span>
+    </div>
+
+    <button onclick="buildBoard(16)">Beginner (4X4)</button>
+    <button onclick="buildBoard(64)">Medium (8X8)</button>
+    <button onclick="buildBoard(144)">Expert (12X12)</button>
+
+    <div class="userMonitor"><span class="safeClicks">🖐🏿🖐🏿🖐🏿|</span><span class="monitorEmoji"
+            onclick="buildBoard(16)">😀|</span><span class="lifeCounter">❤️❤️❤️ </span>
+    </div>
+
+    <table class="gameTable">
+        <tbody class="board">
+            <tr>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 0, 0)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 0, 0)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 0, 1)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 0, 1)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 0, 2)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 0, 2)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 0, 3)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 0, 3)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 0, 4)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 0, 4)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 0, 5)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 0, 5)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 0, 6)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 0, 6)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 0, 7)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 0, 7)"></td>
+            </tr>
+            <tr>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 1, 0)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 1, 0)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 1, 1)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 1, 1)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 1, 2)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 1, 2)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 1, 3)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 1, 3)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 1, 4)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 1, 4)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 1, 5)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 1, 5)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 1, 6)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 1, 6)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 1, 7)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 1, 7)"></td>
+            </tr>
+            <tr>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 2, 0)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 2, 0)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 2, 1)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 2, 1)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 2, 2)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 2, 2)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 2, 3)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 2, 3)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 2, 4)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 2, 4)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 2, 5)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 2, 5)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 2, 6)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 2, 6)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 2, 7)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 2, 7)"></td>
+            </tr>
+            <tr>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 3, 0)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 3, 0)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 3, 1)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 3, 1)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 3, 2)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 3, 2)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 3, 3)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 3, 3)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 3, 4)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 3, 4)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 3, 5)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 3, 5)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 3, 6)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 3, 6)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 3, 7)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 3, 7)"></td>
+            </tr>
+            <tr>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 4, 0)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 4, 0)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 4, 1)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 4, 1)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 4, 2)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 4, 2)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 4, 3)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 4, 3)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 4, 4)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 4, 4)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 4, 5)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 4, 5)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 4, 6)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 4, 6)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 4, 7)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 4, 7)"></td>
+            </tr>
+            <tr>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 5, 0)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 5, 0)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 5, 1)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 5, 1)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 5, 2)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 5, 2)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 5, 3)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 5, 3)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 5, 4)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 5, 4)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 5, 5)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 5, 5)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 5, 6)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 5, 6)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 5, 7)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 5, 7)"></td>
+            </tr>
+            <tr>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 6, 0)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 6, 0)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 6, 1)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 6, 1)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 6, 2)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 6, 2)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 6, 3)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 6, 3)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 6, 4)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 6, 4)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 6, 5)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 6, 5)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 6, 6)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 6, 6)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 6, 7)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 6, 7)"></td>
+            </tr>
+            <tr>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 7, 0)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 7, 0)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 7, 1)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 7, 1)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 7, 2)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 7, 2)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 7, 3)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 7, 3)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 7, 4)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 7, 4)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 7, 5)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 7, 5)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 7, 6)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 7, 6)"></td>
+                <td class="cell  hiden" onclick="cellClicked('leftClick' ,this, 7, 7)"
+                    oncontextmenu="cellClicked('rightClick' ,event, 7, 7)"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="hintBar"><span class="hintTxt">Hint?</span><span class="hint1" onclick="setToHintMode()">🤓</span><span
+            class="hint2" onclick="setToHintMode()">🤓</span><span class="hint3" onclick="setToHintMode()">🤓</span>
+    </div>
+    <br>
+    <div class="bestGame">Top Result: <span class="bestGameTime">00:00</span> </div>
+    <script src="js/main.js"></script>
+    <script src="js/utils.js"></script>
+</body>
+
+</html>
